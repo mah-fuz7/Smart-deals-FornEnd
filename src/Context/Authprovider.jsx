@@ -7,7 +7,7 @@ import { auth } from "../Firebase/firebase.config";
 const Authprovider = ({children} ) => {
 // state for user and loading
 const [user,setUser]=useState(null);
-console.log(user)
+// console.log(user)
 const [loading,setLoading]=useState(true);
 
 // google auth provider
@@ -41,6 +41,7 @@ signOutFunc,
 user,
 createUserWithEmailAndPasswordFunc,
 signInWithEmailAndPasswordFunc,
+loading,
     }
 // state change
 useEffect(()=>{

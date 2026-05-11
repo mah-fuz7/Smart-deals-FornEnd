@@ -18,6 +18,7 @@ const router = createBrowserRouter([
     children:[
         {
             path:'/',
+            index:true,
             Component:Home
         },
         
@@ -44,7 +45,8 @@ const router = createBrowserRouter([
             </PrivateRoute>
         },
         {
-            path:'/productdetails',
+            path:'/productdetails/:id',
+            loader:({params}) =>fetch(`http://localhost:3000/products/${params.id}`),
             Component:Productsdetails
         },
         {

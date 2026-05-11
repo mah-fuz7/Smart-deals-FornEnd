@@ -1,2 +1,21 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* DaisyUI theme override */
+@layer base {
+  :root {
+    --p: 262 74% 53%;   /* #632EE3 */
+    --pf: 262 74% 45%;  /* darker primary for hover */
+  }
+}
+@layer components {
+  .btn-primary {
+    background-image: linear-gradient(90deg, #632EE3, #9F62F2);
+    border: none;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-image: linear-gradient(90deg, #825ddf, #8e4eea);
+  }
+}

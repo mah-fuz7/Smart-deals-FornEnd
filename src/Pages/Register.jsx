@@ -1,8 +1,9 @@
-import { useContext, useEffect } from "react";
+import { useContext,  } from "react";
 import { Authcontext } from "../Context/Authcontext";
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 
-
+import signinimg from '../assets/undraw_sign-in_uva0.svg'
 
 
 const Register = () => {
@@ -74,7 +75,16 @@ email:result.user.email,
     
 .then(res =>res.json())
 .then(data => {
-  console.log(data)
+if(data.insertedId){
+  Swal.fire({
+  title: "Log In",
+  text: "User registered successfully.",
+  imageUrl:signinimg,
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: "Custom image"
+});
+}
 })
 
 })

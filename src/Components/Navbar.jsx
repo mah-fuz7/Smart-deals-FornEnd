@@ -4,7 +4,7 @@ import { Authcontext } from '../Context/Authcontext';
 
 const Navbar = () => {
     const {user,signOutFunc}=useContext(Authcontext)
-    console.log(user)
+    // console.log(user)
    
     return (
        
@@ -25,7 +25,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end gap-4">
     {
-        user?<Link onClick={signOutFunc} to="/" className="btn">Sign Out</Link>:<div>
+        user?<Link onClick={signOutFunc} to="/" className="btn btn-primary">Sign Out</Link>:<div>
             <Link to="/login" className="btn">Log In</Link>
     <Link to="/register" className="btn btn-primary ml-3">Register</Link>
         </div>
